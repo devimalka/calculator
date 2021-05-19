@@ -14,11 +14,7 @@ function substract(a,b){
 }
 
 function multiply(a,b){
-    /*let sum=1;
-    for(let i=0;i<array.length;i++){
-        sum*=array[i];
-    }
-    return sum;*/
+    
     return a*b;
 }
 
@@ -61,15 +57,10 @@ function display(nums){
 
 
 
-
-
 function reply(clickedid){
-    
-   display(clickedid);
+
+
+    display(clickedid);
+       
 }
-
-
-
-
-
 
