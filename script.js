@@ -44,92 +44,74 @@ function operator(op,num1,num2){
    
 }
 
+let firstDigit=null;
+let secondDigit = null;
+let tempStore="";
+let tempValue="";
+let displayValue = "";
+let display = document.getElementsByClassName('disp');
+let firstOperator,secondOperator;
+let sumall;
 
-let hiddenvalue = document.getElementsByClassName("hiddenvalue");
-
-let score = "";
 
 
-function display(nums){
-    
-    let disp = document.getElementsByClassName('disp');
-    disp[0].innerHTML+=nums;
-
+function updateDisplay(){
+    display[0].innerHTML = sumall;
 }
 
-
-
-function reply(clickedid){
-    if(clickedid=="+"|| clickedid=='/'|| clickedid=='*'||clickedid=='-' || clickedid == '='){
-        score = "";
+function send(btn){
+    if(btn == '+' || btn == '-' || btn == '/' || btn == '*' || btn == '='){
+       tempStore = "";
+       tempStore = tempValue;
+       tempValue = "";
     }
     else{
-    score+=clickedid;
-    console.log(score);
-    }
-    display(clickedid);
-       
-}
-
-
-function checkop(first,second){
-    if(second != null && first !=null){
-        return true;
-    }
-    else{
-        return false;
-    }
-
-}
-
-
-let firstoperand = null;
-let secondoperand = false;
-let sums;
-let operand;
-let second = null;
-let first=null;
-let secondo = false;
-
-function operatorHandle(op){
-    if(first==null && second==false){
-        first = op;
-    }
-    else if(first =!null && second == false){
-        secondo = op;
-    }
-
-}
-
-function sum(op)
-{
-    
-    let check = parseFloat(op);
-    if(isNaN(check)){
-
-        if(firstoperand == null && secondoperand == false){
-            firstoperand = parseFloat(score);
-            operatorHandle(op);
-        }
-        else if(firstoperand !=null && secondoperand == false){
-            secondoperand = parseFloat(score);
-            operatorHandle(op);
-           
-        }
-        else if(first !=null && secondoperand !=null){
-            if(first='+'){
-                sums = add(firstoperand,secondoperand);
-                console.log(sums);
-                first = secondo;
-                secondo = false;
-            }
-        }
-
-
-    }
-   
-       console.log(firstoperand,op,secondoperand);
-            
-}
-
+        tempValue+=btn;
         
+    }
+}
+
+
+function swapValues(){
+            firstDigit = sumall;
+            secondDigit = null;
+            firstOperator = secondOperator;
+            secondOperator = null;
+}
+
+function returnValue(passoperator){
+    switch(passoperator){
+        case '+':
+            sumall = add(firstDigit,secondDigit);
+            swapValues();
+            break;
+        case '/':
+            sumall = divide(firstDigit,secondDigit);
+            swapValues();
+            break;
+        case '*':
+            sumall = multiply(firstDigit,secondDigit);
+            swapValues;
+            break;
+        case '-':
+            sumall = multiply(firstDigit,secondDigit);
+            swapValues;
+            break;
+        case '=':
+                         
+            
+    }
+}
+
+function storeValues(value){
+        if(firstDigit == null && secondDigit == null){
+            firstDigit = parseFloat(tempStore);
+            firstOperator = value;
+        }
+        else if(firstDigit != null && secondDigit == null){
+            secondDigit = parseFloat(tempStore);
+            secondOperator = value;
+        }
+      
+        console.log(firstDigit,secondDigit,firstOperator,secondOperator);
+}
