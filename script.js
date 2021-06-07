@@ -69,6 +69,7 @@ function send(btn){
         tempValue+=btn;
         
     }
+ 
 }
 
 
@@ -97,7 +98,7 @@ function returnValue(passoperator){
             sumall = multiply(firstDigit,secondDigit);
             swapValues;
             break;
-        case '=':
+       
                          
             
     }
@@ -112,6 +113,9 @@ function storeValues(value){
             secondDigit = parseFloat(tempStore);
             secondOperator = value;
         }
-      
+        if(firstOperator != null && secondOperator != null && firstDigit !=null && secondDigit != null){
+            returnValue(firstOperator);
+            updateDisplay();
+        }
         console.log(firstDigit,secondDigit,firstOperator,secondOperator);
 }
