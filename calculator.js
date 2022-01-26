@@ -36,3 +36,42 @@ function operator(op,a,b){
     }
 }
 
+
+
+let oplist =['/','*','+','-'];
+let sum = 0;
+let first = "";
+let second = "";
+let temp = "";
+let tempop = "";
+
+let input = "";
+
+let holder = document.getElementById("holder");
+
+function populate(a){
+    input = input.concat(a.value);
+    holder.placeholder = input;
+
+   if(!oplist.includes(a.value))
+   {
+    first = first.concat(a.value);
+    console.log(first);   
+      
+   }
+   else if(oplist.includes(a.value))
+   {
+       if(second !="" && first !="")
+       {
+           sum += operator(tempop,parseInt(second),parseInt(first))
+       }
+        else{
+            second = first;
+        first = "";
+        tempop = a.value;    
+
+       }
+           
+   }
+   else console.log("no value");
+}
