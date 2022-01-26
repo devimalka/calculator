@@ -17,7 +17,22 @@ function divide(a,b){
 }
 
 
-console.log(add(2,4));
-console.log(substract(2,4));
-console.log(multiply(2,4));
-console.log(divide(2,4));
+function operator(op,a,b){
+    switch(op){
+        case "+":
+            return add(a,b);
+            break;
+        case "-":
+            return substract(a,b);
+            break;
+        case "*":
+            return multiply(a,b);
+        case "/":
+            return divide(a,b);
+            break;
+        default:
+            console.log("Enter valid operator")
+            return null;
+    }
+}
+
