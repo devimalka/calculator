@@ -50,6 +50,9 @@ let input = "";
 let holder = document.getElementById("holder");
 
 function populate(a){
+    console.log("sum is ",sum);
+    console.log("first is "+first+"second is",second);
+    
     input = input.concat(a.value);
     holder.placeholder = input;
 
@@ -63,7 +66,8 @@ function populate(a){
    {
        if(second !="" && first !="")
        {
-           sum += operator(tempop,parseInt(second),parseInt(first))
+           sum += operator(tempop,parseInt(second),parseInt(first));
+           first ="";
        }
         else{
             second = first;
@@ -74,4 +78,14 @@ function populate(a){
            
    }
    else console.log("no value");
+}
+
+
+function clearall(){
+    input = "";
+    first = "";
+    second = "";
+    tempop = "";
+    sum = 0;
+    holder.placeholder = input;
 }
