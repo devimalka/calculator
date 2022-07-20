@@ -36,14 +36,10 @@ function operator(operator,a,b){
 
 
 
-const btns = document.getElementsByTagName("button")
-function printfunct(){
-    console.log("HI")
-}
+let btns = document.querySelectorAll("button");
 
-
-for(var i=0;i<btns.length;i++){
-    console.log(btns[i])
-    btns[i].addEventListener('click',console.log("test"));
-}
-
+btns.forEach(button=>{
+    button.addEventListener('click',function(event){
+        console.log(event)
+    })
+})
