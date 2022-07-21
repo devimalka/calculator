@@ -36,7 +36,7 @@ function operator(operator,a,b){
 
 
 
-let btns = document.querySelectorAll("button");
+let btns = document.querySelectorAll(".number");
 
 btns.forEach(button=>{
     button.addEventListener('click',function(event){
@@ -53,3 +53,19 @@ function populateDisplayValue(value){
         displayValue.innerHTML = displayValue.innerHTML + value;
     }
 }
+
+
+
+let clearbtn = document.querySelector('.clear');
+
+clearbtn.addEventListener('click',function(){
+    let displayvalue = document.getElementById('displayvalue');
+    displayvalue.innerHTML = '';
+})
+
+let operatorbtns = document.querySelectorAll('.operator');
+operatorbtns.forEach(btn=>{
+    btn.addEventListener('click',function(event){
+        console.log(btn.innerHTML);
+    })
+})
