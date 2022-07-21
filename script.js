@@ -40,6 +40,16 @@ let btns = document.querySelectorAll("button");
 
 btns.forEach(button=>{
     button.addEventListener('click',function(event){
-        console.log(event)
+    populateDisplayValue(button.innerHTML)
     })
 })
+
+function populateDisplayValue(value){
+    let displayValue = document.getElementById('displayvalue');
+    if (displayValue.innerHTML == 'Dummy data'){
+        displayValue.innerHTML = value;
+    }
+    else {
+        displayValue.innerHTML = displayValue.innerHTML + value;
+    }
+}
