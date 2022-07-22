@@ -16,56 +16,71 @@ function divide(a,b){
 
 
 function operator(operator,a,b){
+    a = Number(a);
+    b = Number(b);
+    let output = 0;
     switch(operator){
         case '-':
-            return substract(a,b);
+            output= substract(a,b);
             break;
         case '+':
-            return add(a,b);
+            output =add(a,b);
             break;
         case '/':
-            return divide(a,b);
+            output =  divide(a,b);
             break;
         case '*':
-            return multiply(a,b);
+            output =  multiply(a,b);
             break;
 
 
     }
+    console.log("function inside " +output);
+    return output;
+    
 }
 
 
+let operatorfalse = false;
+let num1 = '';
+let num2 = '';
+let tmpoperator = '';
+let tmpoperator2 = '';
 
-let btns = document.querySelectorAll(".number");
+const numbtns = document.querySelectorAll('.number');
+numbtns.forEach(btn=>{
+    btn.addEventListener('click',function(event){
+        if (!operatorfalse){
+            num1+=btn.innerHTML;
+            console.log("num1 is "+ num1);
+            
+        }
+        else{
+            num2+=btn.innerHTML;
+            console.log("num1 is " + num1);
+            console.log("num2 is "+ num2);
+           
+        }
 
-btns.forEach(button=>{
-    button.addEventListener('click',function(event){
-    populateDisplayValue(button.innerHTML)
     })
 })
 
-function populateDisplayValue(value){
-    let displayValue = document.getElementById('displayvalue');
-    if (displayValue.innerHTML == 'Dummy data'){
-        displayValue.innerHTML = value;
-    }
-    else {
-        displayValue.innerHTML = displayValue.innerHTML + value;
-    }
-}
 
-
-
-let clearbtn = document.querySelector('.clear');
-
-clearbtn.addEventListener('click',function(){
-    let displayvalue = document.getElementById('displayvalue');
-    displayvalue.innerHTML = '';
-})
-
-let operatorbtns = document.querySelectorAll('.operator');
-operatorbtns.forEach(btn=>{
+const opbtns = document.querySelectorAll('.operator');
+opbtns.forEach(btn=>{
     btn.addEventListener('click',function(event){
-        console.log(btn.innerHTML);
+        console.log("operator is " + btn.innerHTML);
+
+      if(num1 && (!num2)){
+        operatorfalse = true;
+        tmpoperator = btn.innerHTML;
+
+      }
+      if(num1 && num2){
+        console.log("sum is "+ operator(tmpoperator,num1,num2));
+        num1 = operator(tmpoperator,num1,num2);
+        num2 = '';
+        tmpoperator = btn.innerHTML;
+      }
     })
 })
