@@ -11,7 +11,13 @@ function multiply(a,b){
 }
 
 function divide(a,b){
-    return a/b;
+    if(a == '0' || b =='0' ){
+        alert("cant divide by 0 Zero divison error");
+    }
+    else{
+        return a/b;
+
+    }
 }
 
 
@@ -97,7 +103,11 @@ opbtns.forEach(btn=>{
           }
     }
     else{
-        if(num1 && num2){
+        if((!num1) || (!num2)){
+            alert("No values");
+        }
+        else(num1 && num2)
+        {
             console.log("sum is "+ operator(tmpoperator,num1,num2));
             num1 = operator(tmpoperator,num1,num2);
             num2 = '';
