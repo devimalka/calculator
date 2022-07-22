@@ -47,9 +47,22 @@ let num2 = '';
 let tmpoperator = '';
 let tmpoperator2 = '';
 
+
+let displayValue = document.getElementById('displayvalue');
+
+
+function init(){
+    num1 = '';
+    num2 = '';
+    tmpoperator = '';
+    tmpoperator2 = '';
+    displayValue.innerHTML = '';
+}
+
 const numbtns = document.querySelectorAll('.number');
 numbtns.forEach(btn=>{
     btn.addEventListener('click',function(event){
+  
         if (!operatorfalse){
             num1+=btn.innerHTML;
             console.log("num1 is "+ num1);
@@ -70,17 +83,41 @@ const opbtns = document.querySelectorAll('.operator');
 opbtns.forEach(btn=>{
     btn.addEventListener('click',function(event){
         console.log("operator is " + btn.innerHTML);
-
-      if(num1 && (!num2)){
-        operatorfalse = true;
-        tmpoperator = btn.innerHTML;
-
-      }
-      if(num1 && num2){
-        console.log("sum is "+ operator(tmpoperator,num1,num2));
-        num1 = operator(tmpoperator,num1,num2);
-        num2 = '';
-        tmpoperator = btn.innerHTML;
-      }
+    if (btn.innerHTML != '='){
+        if(num1 && (!num2)){
+            operatorfalse = true;
+            tmpoperator = btn.innerHTML;
+    
+          }
+          if(num1 && num2){
+            console.log("sum is "+ operator(tmpoperator,num1,num2));
+            num1 = operator(tmpoperator,num1,num2);
+            num2 = '';
+            tmpoperator = btn.innerHTML;
+          }
+    }
+    else{
+        if(num1 && num2){
+            console.log("sum is "+ operator(tmpoperator,num1,num2));
+            num1 = operator(tmpoperator,num1,num2);
+            num2 = '';
+            tmpoperator = btn.innerHTML;
+            displayValue.innerHTML = num1;
+          }
+    }
+      
     })
+})
+
+const kbds = document.querySelectorAll('.kbd');
+kbds.forEach(kbd=>{
+    kbd.addEventListener('click',function(event){
+        displayValue.innerHTML += kbd.innerHTML;
+    })
+})
+
+
+const clearbtn = document.querySelector('.clear');
+clearbtn.addEventListener('click',function(event){
+    init();
 })
