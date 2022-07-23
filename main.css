@@ -1,0 +1,14 @@
+.main-div{
+    display: inline-block;
+    margin: auto;
+   
+}
+
+button {
+    padding: 15px 15px 16px 16px;
+    margin: 2px;
+}
+
+.displayvalue{
+    display: block;
+}

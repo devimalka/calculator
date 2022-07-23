@@ -11,13 +11,15 @@ function multiply(a,b){
 }
 
 function divide(a,b){
-    if(a == '0' || b =='0' ){
+
+    if(a == 0|| b ==0 ){
         alert("cant divide by 0 Zero divison error");
     }
     else{
         return a/b;
 
     }
+    return 0;
 }
 
 
