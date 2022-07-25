@@ -90,7 +90,6 @@ numbtns.forEach(btn=>{
 const opbtns = document.querySelectorAll('.operator');
 opbtns.forEach(btn=>{
     btn.addEventListener('click',function(event){
-        console.log("operator is " + btn.innerHTML);
     if (btn.innerHTML != '='){
         if(num1 && (!num2)){
             operatorfalse = true;
@@ -135,3 +134,4 @@ const clearbtn = document.querySelector('.clear');
 clearbtn.addEventListener('click',function(event){
     init();
 })
+

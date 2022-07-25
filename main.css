@@ -1,14 +1,33 @@
+.number{
+    width: 45px;
+    height: 45px;
+    /* border-radius: 50px; */
+}
+
+.operator{
+    width: 45px;
+    height: 45px;
+    
+}
+
+.clear {
+    width: 45px;
+    height:  45px;
+}
+
+.screen {
+    width: auto;
+    height: 50px;
+}
+
 .main-div{
-    display: inline-block;
-    margin: auto;
-   
-}
-
-button {
-    padding: 15px 15px 16px 16px;
-    margin: 2px;
-}
-
-.displayvalue{
     display: block;
+    margin: auto;
+    width: 50%;
+    justify-content: center;
+}
+
+.screen{
+    display: block;
+   
 }
