@@ -115,6 +115,8 @@ opbtns.forEach(btn=>{
             num2 = '';
             tmpoperator = btn.innerHTML;
             displayValue.innerHTML = num1;
+            num1 = num1.toString();
+            operatorfalse = false;
           }
     }
       
