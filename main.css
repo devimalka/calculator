@@ -1,33 +1,15 @@
-.number{
+.kbd{
     width: 45px;
     height: 45px;
-    /* border-radius: 50px; */
 }
 
-.operator{
+.clear{
     width: 45px;
     height: 45px;
-    
+
 }
 
-.clear {
+.sumbtn{
     width: 45px;
-    height:  45px;
-}
-
-.screen {
-    width: auto;
-    height: 50px;
-}
-
-.main-div{
-    display: block;
-    margin: auto;
-    width: 50%;
-    justify-content: center;
-}
-
-.screen{
-    display: block;
-   
+    height: 100%;
 }
