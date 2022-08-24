@@ -43,7 +43,6 @@ function operator(operator,a,b){
 
 
     }
-    console.log("function inside " +output);
     return output;
     
 }
@@ -73,13 +72,11 @@ numbtns.forEach(btn=>{
   
         if (!operatorfalse){
             num1+=btn.innerHTML;
-            console.log("num1 is "+ num1);
             
         }
         else{
             num2+=btn.innerHTML;
-            console.log("num1 is " + num1);
-            console.log("num2 is "+ num2);
+           
            
         }
 
@@ -90,6 +87,9 @@ numbtns.forEach(btn=>{
 const opbtns = document.querySelectorAll('.operator');
 opbtns.forEach(btn=>{
     btn.addEventListener('click',function(event){
+        console.log("num1 is " + num1);
+        console.log("num2 is "+ num2);
+        console.log(btn.innerHTML);
     if (btn.innerHTML != '='){
         if(num1 && (!num2)){
             operatorfalse = true;
@@ -104,10 +104,12 @@ opbtns.forEach(btn=>{
           }
     }
     else{
-        if((!num1) || (!num2)){
-            alert("No values");
+        if(Number(num1)==0 && Number(num2)==0){
+            alert("No Values!");
         }
-        else(num1 && num2)
+
+      
+        else if((Number(num1)!=0) && (Number(num2)!=0))
         {
             console.log("sum is "+ operator(tmpoperator,num1,num2));
             num1 = operator(tmpoperator,num1,num2);
@@ -135,3 +137,9 @@ clearbtn.addEventListener('click',function(event){
     init();
 })
 
+
+document.addEventListener("keypress",function(event){
+
+        console.log(event.key);
+
+})
