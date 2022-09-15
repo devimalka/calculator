@@ -85,6 +85,9 @@ numbtns.forEach(btn=>{
 
 
 const opbtns = document.querySelectorAll('.operator');
+
+
+
 opbtns.forEach(btn=>{
     btn.addEventListener('click',function(event){
         console.log("num1 is " + num1);
@@ -140,6 +143,8 @@ clearbtn.addEventListener('click',function(event){
 
 document.addEventListener("keypress",function(event){
 
-        console.log(event.key);
-
+        d = document.getElementById(event.key)
+        if (d != null){
+            console.log(d);
+        }
 })
